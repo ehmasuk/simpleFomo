@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="Description" content="Enter your description here" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+        <title>side popoup</title>
+
+        <style>
+            .mini-formo-popup {
+                display: flex;
+                max-width: 420px;
+                padding: 20px;
+                border-radius: 10px;
+                background-color: #fff;
+                justify-content: space-between;
+                z-index: 10000;
+                position: fixed;
+                bottom: 25px;
+                right: 25px;
+                box-shadow: rgb(0 0 0 / 28%) 0px 0px 10px;
+                width: 100%;
+                visibility: hidden;
+                z-index: 999;
+                animation-duration: .5s;
+                overflow: hidden;
+
+            }
+            .mini-formo-popup .profile img {
+                border-radius: 50%;
+                height: 80px;
+                width: 80px;
+                object-fit: cover;
+            }
+            .mini-formo-popup .profile {
+                flex-basis: 20%;
+            }
+            .mini-formo-popup p {
+                margin: 0;
+            }
+            .mini-formo-popup .info .des {
+                color: #2f2a68;
+                font-size: 14px;
+                text-align: justify;
+                font-weight: 500;
+            }
+            .mini-formo-popup .info {
+                flex-basis: 75%;
+            }
+            .mini-formo-popup .info .author {
+                font-size: 16px;
+                font-weight: bold;
+                color: #4d5c6d;
+            }
+            .mini-formo-popup .info .time {
+                color: rgba(0, 0, 0, 0.5);
+            }
+            .mini-formo-popup .info .check-btn {
+                background-color: #794eda;
+                outline: none !important;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            .mini-formo-popup .info .check-btn a {
+                background-color: #794eda;
+                color: #fff;
+                text-decoration: none;
+            }
+            .mini-formo-popup .fa-times {
+                position: absolute;
+                right: 10px;
+                top: 10px;
+                cursor: pointer;
+            }
+            @keyframes fomoSlideIn {
+                from {
+                    transform: translateY(600px);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+            @keyframes fomoSlideOut {
+                from {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+                to {
+                    transform: translateY(600px);
+                    opacity: 0;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- fomo popup -->
+        <div class="mini-formo-popup dashboard-fomo">
+            <i onclick="closeFomo()" class="fas fa-times"></i>
+            <div class="profile">
+                <img src="" alt="" class="img-fluid" />
+            </div>
+            <div class="info">
+                <p class="author"></p>
+                <p class="des">Brought a couse with a discount of <b>10%</b></p>
+                <div style="color: #000; font-size: 13px; margin-top: 5px; display: flex; font-weight: bold; align-items: center; justify-content: space-between">
+                    <p class="time"></p>
+                    <button class="btn check-btn btn-sm"><a href="#">Check</a></button>
+                </div>
+            </div>
+        </div>
+
+        <script src="fomo.js"></script>
+    </body>
+</html>
